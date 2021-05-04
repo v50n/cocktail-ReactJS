@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import {Switch, Route} from 'react-router-dom'
+import PageContainer from "./components/PageContainer";
+import About from "./components/About";
 
+const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Switch>
+        <Route exact path="/">
+          <PageContainer />
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+      </Switch>
+    </>
   );
 }
 
