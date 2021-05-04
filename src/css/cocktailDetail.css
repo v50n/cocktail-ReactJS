@@ -1,0 +1,8 @@
+.cocktailDetail{
+    width: 80%;
+    margin: auto;
+}
+
+.cocktailDetail .name{
+    text-align: center;
+}

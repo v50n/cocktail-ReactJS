@@ -1,0 +1,44 @@
+.cart{
+    background-color: white;
+    box-shadow: 3px 2px 8px 3px rgba(69,69,69,0.62);
+    border-radius: 5px;
+}
+
+img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.cartContain{
+    padding: 20px;
+}
+.cart .cartContain .title{
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.cart .cartContain .glass{
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 0.5rem 0 0.5rem 0;
+}
+.cart .cartContain .alcoholic{
+    color: rgb(201, 200, 200);
+}
+
+.btn-detail{
+    margin-top: 1rem;
+    border: none;
+    background-color: rgb(218, 23, 127);
+    border-radius: 5px;
+    color: white;
+    letter-spacing: 2px;
+    padding: 10px 10px;
+    cursor: pointer;
+}
+.btn-detail:hover{
+    background-color: rgb(245, 104, 179);
+}

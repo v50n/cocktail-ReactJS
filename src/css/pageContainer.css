@@ -1,5 +1,5 @@
 .container{
-    width: 90%;
+    width: 80%;
     margin: auto;
 }
 
@@ -20,6 +20,7 @@ form {
     flex-direction: column;
     padding-top: 30px;
     padding-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .formSearch form label{
@@ -35,5 +36,16 @@ form {
     border-radius: 5px;
     padding-left: 0.5rem;
     font-size: 1.3rem;
+   
     /* 06 48 51 51 28 */
+}
+
+.sectionTitle{
+    text-align: center;
+}
+
+.sectionCocktails{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem 2rem;
 }
