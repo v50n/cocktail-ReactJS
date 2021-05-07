@@ -4,7 +4,6 @@ import PageContainer from "./components/PageContainer";
 import About from "./components/About";
 import CocktailDetail from "./components/CocktailDetail";
 
-const url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=';
 function App() {
   return (
     <>

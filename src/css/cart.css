@@ -2,9 +2,10 @@
     background-color: white;
     box-shadow: 3px 2px 8px 3px rgba(69,69,69,0.62);
     border-radius: 5px;
+    margin-bottom: 1rem;
 }
 
-img{
+.cart img{
     width: 100%;
     height: 300px;
     object-fit: cover;

@@ -1,19 +1,43 @@
 import './../css/pageContainer.css';
 import CocktailCart from './CocktailCart';
 import {useEffect, useState} from 'react';
-import {useGetValCocktailContext} from './../AppContext';
 
+const url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=";
 
 const PageContainer = () => {
-    const {isLoading, cocktailData } = useGetValCocktailContext()
+    const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [inputVal, setInputVal] = useState("");
 
-    console.log(cocktailData)
+    const handleOnChange = (e) =>{
+        setInputVal(e.target.value);
+    }
+    const getData = async () =>{
+        var response = await fetch(url);
+        var data = await response.json();
+        setData(data.drinks)
+        setIsLoading(false);
+    }
+    const getDataOnChange = async () =>{
+        var response = await fetch(url+inputVal);
+        var data = await response.json();
+        setData(data.drinks)
+        setIsLoading(false);
+    }
+
+    useEffect(()=>{
+        getData()
+    },[])
+    useEffect(()=>{
+        getDataOnChange()
+    },[inputVal])
+
     return(
         <div className="container">
             <div className="formSearch">
                 <form action="">
                     <label htmlFor="">Search your cocktail</label>
-                    <input type="text" placeholder=""/>
+                    <input type="text" placeholder="" value={inputVal} onChange={handleOnChange} />
                 </form>
             </div>
             
@@ -30,7 +54,7 @@ const PageContainer = () => {
                         <h2 className="sectionTitle">Cocktails</h2>
                         <div className="sectionCocktails">
                         {
-                            cocktailData.map(data => <CocktailCart key={data.idDrink} {...data} />)
+                           data === null ? 'No cocktail available' :  data.map(data => <CocktailCart key={data.idDrink} {...data} />)
                         }
                             
                         </div>
